@@ -1,10 +1,3 @@
-/*
- * @Descripttion: 打包环境配置
- * @Author: 19080088
- * @Date: 2021-01-25 11:00:21
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-25 14:41:33
- */
 'use strict'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')

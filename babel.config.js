@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 配置babel
- * @Author: 19080088
- * @Date: 2021-01-25 11:44:29
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-25 14:58:15
- */
-
 module.exports = {
   presets: [
     ['@babel/env', {
