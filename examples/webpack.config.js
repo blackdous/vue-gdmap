@@ -1,21 +1,15 @@
-/*
- * @Descripttion: dev环境配置
- * @Author: 19080088
- * @Date: 2021-01-25 11:00:12
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-25 14:46:01
- */
 'use strict'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
-const config = reuqire('../config')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { VueLoaderPlugin } = require('vue-loader')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'develop',
+  mode: 'development',
   entry: {
-    app: './src/index.js',
+    app: path.resolve(__dirname, '../src/index.ts'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -40,5 +34,10 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      filename: path.resolve(__dirname, 'index.html'),
+      template: path.resolve(__dirname, 'index.html'),
+      inject: true,
+    }),
   ],
 }

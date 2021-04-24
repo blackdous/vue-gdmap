@@ -1,10 +1,3 @@
-/*
- * @Descripttion: aaa
- * @Author: 19080088
- * @Date: 2021-01-25 11:47:43
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-25 14:39:54
- */
 module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {

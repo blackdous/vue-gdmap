@@ -1,10 +1,3 @@
-/*
- * @Descripttion: commit校验
- * @Author: 19080088
- * @Date: 2021-01-25 11:48:24
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-25 16:41:48
- */
 module.exports = {
   // 继承默认配置
   extends: ['@commitlint/config-angular'],
