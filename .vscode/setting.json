@@ -1,0 +1,12 @@
+{
+  "fileheader.configObj": {
+    "autoAdd": false
+  },
+  "prohibitAutoAdd": [
+    "*",
+    "json",
+    "js",
+    "ts",
+    "vue"
+  ]
+}
