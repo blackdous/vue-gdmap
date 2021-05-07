@@ -15,7 +15,7 @@ interface Config {
 
 export default class LoadAmapApi {
   private config:Config
-  constructor(options) {
+  public constructor(options) {
     this.config = { ...options, ...DEATUL_CONFIG }
     console.log('this.config: ', this.config)
   }

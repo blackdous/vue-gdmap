@@ -1,0 +1,13 @@
+# vscode
+.vscode
+
+# node_modules
+node_modules
+
+# docs
+docs
+examples
+
+# options files
+.eslintrc.js
+babel.config.js

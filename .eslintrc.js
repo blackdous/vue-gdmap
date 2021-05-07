@@ -16,8 +16,9 @@ module.exports = {
     '@typescript-eslint',
   ],
   extends: [
-    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
+    'alloy',
+    'alloy/typescript'
   ],
   rules: {
     // js/ts
