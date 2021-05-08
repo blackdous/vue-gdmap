@@ -17,6 +17,6 @@ export default class LoadAmapApi {
   private config:Config
   public constructor(options) {
     this.config = { ...options, ...DEATUL_CONFIG }
-    console.log('this.config: ', this.config)
+    // console.log('this.config: ', this.config)
   }
 }
