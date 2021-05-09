@@ -17,6 +17,9 @@ export default class LoadAmapApi {
   private config:Config
   public constructor(options) {
     this.config = { ...options, ...DEATUL_CONFIG }
+    if (window['amapkey'] && !this.config.key) {
+      this.config.key = window['amapkey']
+    }
     // console.log('this.config: ', this.config)
   }
 }
