@@ -9,8 +9,7 @@ module.exports = {
   plugins: [
     '@vue/babel-plugin-jsx',
     '@babel/proposal-class-properties',
-    '@babel/transform-runtime',
-    'lodash',
+    '@babel/transform-runtime'
   ],
   overrides: [
     {

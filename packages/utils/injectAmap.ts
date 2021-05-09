@@ -5,12 +5,16 @@ const DEATUL_CONFIG = {
   plugins: [],
   callback: 'init_callback',
   useAmapUI: false,
-  protocol: 'https',
+  protocol: 'https:',
 }
 
 interface Config {
   v?: string
   key?: string
+  protocol?: string
+  hostAndPath?: string
+  callback?: string
+  plugins?: []
 }
 
 export default class LoadAmapApi {
@@ -20,6 +24,24 @@ export default class LoadAmapApi {
     if (window['amapkey'] && !this.config.key) {
       this.config.key = window['amapkey']
     }
-    // console.log('this.config: ', this.config)
+    if (!this.config.protocol.includes(':')) {
+      this.config.protocol += ':'
+    }
+  }
+
+  public createBaseScriptSrc(config: Config):string {
+    return `${config.protocol}//${config.hostAndPath}?v=${config.v}&key=${config.key}&callback=${config.callback}`
+  }
+  public addPulginScriptSrc (src: string) {
+    const { plugins } = this.config
+    const pluginPrefix = /^AMap./
+    const syncPluginsSrc = ''
+    // plugins.forEach((plugin:string) => {
+    //   const prefixName =
+    // })
+    return src
+  }
+  public createScriptDom(src: string) {
+
   }
 }

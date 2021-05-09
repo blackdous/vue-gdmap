@@ -3,6 +3,7 @@
     "autoAdd": false,
     "CheckFileChange": true,
     "createHeader": true, 
+    "supportAutoLanguage": [],
     "prohibitAutoAdd": [
       "json",
       "js",
