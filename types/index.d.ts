@@ -1,4 +1,3 @@
-
 export type ArrayLngLat = [number, number];
 
 export interface LngLatPos {
@@ -11,4 +10,12 @@ export interface FullLngLatPost {
   latitude: number
 }
 
+
+declare global {
+  interface Window {
+    AMap: object
+    AMapUI: object
+    initAMapUI: () => void
+  }
+}
 // export interface
