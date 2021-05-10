@@ -97,6 +97,7 @@
     "*.{js,ts,vue}": "eslint --fix"
   },
   "dependencies": {
-    "@commitlint/config-angular": "^11.0.0"
+    "@commitlint/config-angular": "^11.0.0",
+    "@types/amap-js-api": "^1.4.9"
   }
 }
