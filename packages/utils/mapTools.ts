@@ -1,26 +1,36 @@
 
 import getType from './getType'
 
-interface coordinateObj {
+interface Coordinate {
   lng?: number
   lat?: number
   longitude?: number
   latitude?: number
 }
 
+interface Pixel {
+  x: number
+  y: number
+}
+
+interface Size {
+  width: number
+  height: number
+}
+
 /**
  * 通过AMap.LngLat 生成 转换为 AMap可用的经纬度
  */
-export const toLngLat = (coordinate: coordinateObj):any => {
+export const toLngLat = (coordinate: Coordinate):any => {
   if (!coordinate || ('distance' in coordinate)) {
     return coordinate
   }
 
   let lng = 0
   let lat = 0
-  const posTypeStr:string = getType(coordinate)
+  const coordinateTypeStr:string = getType(coordinate)
 
-  switch(posTypeStr) {
+  switch(coordinateTypeStr) {
     case 'Array':
       lng = coordinate[0]
       lat = coordinate[1]
@@ -33,10 +43,76 @@ export const toLngLat = (coordinate: coordinateObj):any => {
         lng = coordinate.longitude
         lat = coordinate.latitude
       }
+      break
   }
   return new window.AMap.LngLat(lng, lat)
 }
 
-// export const toPixel = (offset:) => {
+export const LngLatTo = (lnglat: any) => {
+  if (!lnglat || !('distance' in lnglat)) {
+    return lnglat
+  }
+  if (Array.isArray(lnglat)) return lnglat.slice()
+  return [lnglat.getLng(), lnglat.getLat()]
+}
 
-// }
+/**
+ * 设置offset
+ */
+export const toPixel = (offset:Pixel) => {
+  if (!offset || ('getX' in offset)) {
+    return offset
+  }
+
+  let x = 0
+  let y = 0
+
+  const pixelTypeStr:string = getType(offset)
+
+  switch(pixelTypeStr) {
+    case 'Array':
+      x = offset[0]
+      y = offset[1]
+      break
+    case 'Object':
+      x = offset.x
+      y = offset.y
+      break
+  }
+  return new window.AMap.Pixel(x, y)
+}
+
+
+/**
+ * 通过AMap.size生成大小
+ */
+export const toSize = (size:Size) => {
+  if (!size || ('getWidth' in size)) {
+    return size
+  }
+  return new window.AMap.Size(size.width, size.height)
+}
+
+export const toBounds = (coordinates: any[]) => {
+  if (!coordinates) {
+    return coordinates
+  }
+  coordinates.forEach((coordinate: Coordinate) => {
+    if (!('distance' in coordinate)) {
+      // eslint-disable-next-line no-param-reassign
+      coordinate = toLngLat(coordinate)
+    }
+  })
+  return new window.AMap.Bounds(coordinates[0], coordinates[1])
+}
+
+
+export const mapTools = {
+  position: toLngLat,
+  LngLat: toLngLat,
+  offset: toPixel,
+  bounds: toBounds,
+  Bounds: toBounds,
+  Pixel: toPixel,
+  Size: toSize,
+}
