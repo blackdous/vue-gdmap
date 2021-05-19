@@ -1,22 +1,6 @@
 
 import getType from './getType'
-
-interface Coordinate {
-  lng?: number
-  lat?: number
-  longitude?: number
-  latitude?: number
-}
-
-interface Pixel {
-  x: number
-  y: number
-}
-
-interface Size {
-  width: number
-  height: number
-}
+import { Coordinate, Pixel, Size } from './type'
 
 /**
  * 通过AMap.LngLat 生成 转换为 AMap可用的经纬度

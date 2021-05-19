@@ -1,3 +1,4 @@
+// import { LngLatPos } from '@'
 interface WHstyleProps {
   width: string
   height: string
@@ -8,15 +9,18 @@ interface WHstyleProps {
 interface NativeDynamicProps {
   view: string
   viewMode: string
-
+  zoom: number
+  zooms: number[]
+  center: string
 }
 
 interface NativeStaticProps {
   protocol: string
-  version: string
+  v: string
   useAMapUI: boolean
-  amapkey: string
+  key: string
 }
+
 
 /**
  * use Amap.setStatus Dynamic setting
@@ -35,4 +39,5 @@ interface StatusDynamicProps {
   zoomEnable: boolean
   touchZoomCenter: boolean
 }
+
 

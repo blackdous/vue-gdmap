@@ -13,6 +13,7 @@
     "lib": [
       "ESNext", "DOM"
     ],
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true
   },
   "exclude": [
