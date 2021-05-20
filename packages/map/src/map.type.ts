@@ -1,4 +1,4 @@
-// import { LngLatPos } from '@'
+import { LngLatPos } from '@vue-map/utils/typings'
 interface WHstyleProps {
   width: string
   height: string
@@ -11,7 +11,7 @@ interface NativeDynamicProps {
   viewMode: string
   zoom: number
   zooms: number[]
-  center: string
+  center: LngLatPos
 }
 
 interface NativeStaticProps {

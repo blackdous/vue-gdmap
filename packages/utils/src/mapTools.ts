@@ -1,6 +1,6 @@
 
 import getType from './getType'
-import { Coordinate, Pixel, Size } from './type'
+import { Coordinate, Pixel, Size } from './typings'
 
 /**
  * 通过AMap.LngLat 生成 转换为 AMap可用的经纬度
