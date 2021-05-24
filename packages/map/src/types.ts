@@ -1,20 +1,20 @@
-import { LngLatPos } from '@vue-map/utils/typings'
-interface WHstyleProps {
+import { Coordinate } from '@vue-map/utils/typings'
+export interface WHstyleProps {
   width: string
   height: string
   position?: string
   [propName: string]: string
 }
 
-interface NativeDynamicProps {
+export interface NativeDynamicProps {
   view: string
   viewMode: string
   zoom: number
   zooms: number[]
-  center: LngLatPos
+  center: Coordinate
 }
 
-interface NativeStaticProps {
+export interface NativeStaticProps {
   protocol: string
   v: string
   useAMapUI: boolean
@@ -25,7 +25,7 @@ interface NativeStaticProps {
 /**
  * use Amap.setStatus Dynamic setting
  */
-interface StatusDynamicProps {
+export interface StatusDynamicProps {
   animateEnable: boolean
   doubleClickZoom: boolean
   dragEnable: boolean
@@ -39,5 +39,3 @@ interface StatusDynamicProps {
   zoomEnable: boolean
   touchZoomCenter: boolean
 }
-
-
