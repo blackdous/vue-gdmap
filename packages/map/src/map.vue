@@ -3,6 +3,7 @@
     <div class="bd-amap" :style="{...contentStyle}">
     </div>
     <slot></slot>
+    <div>111</div>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ import { WHstyleProps } from './types'
 /**
  * container style
  */
-const containerStyle:WHstyleProps = {
+const containerStyle: WHstyleProps = {
   width: '100%',
   height: '100%',
 }
@@ -21,7 +22,7 @@ const containerStyle:WHstyleProps = {
 /**
  * content style
  */
-const contentStyle:WHstyleProps = {
+const contentStyle: WHstyleProps = {
   width: '100%',
   height: '100%',
   position: 'relative',

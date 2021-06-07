@@ -1,9 +1,9 @@
 {
   "fileheader.configObj": {
     "autoAdd": false,
-    "CheckFileChange": true,
-    "createHeader": true, 
-    "supportAutoLanguage": [],
+    "CheckFileChange": false,
+    "createHeader": false, 
+    "supportAutoLanguage": [""],
     "prohibitAutoAdd": [
       "json",
       "js",
