@@ -3,12 +3,12 @@
     <div class="bd-amap" :style="{...contentStyle}">
     </div>
     <slot></slot>
-    <div>111</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, inject, ref, provide } from 'vue'
+import LoadAmapApi from '../../service/injectAmap'
 import { WHstyleProps } from './types'
 
 /**
@@ -67,9 +67,22 @@ export default defineComponent({
     },
   },
   setup (props) {
+
+    const map = ref(null)
+
+    provide('$map', map)
+
     const initMap = () => {
 
     }
+
+    const createInstance = () => {
+      if (!map.value) {
+        console.log('map: ', map)
+        // const options =
+      }
+    }
+
   },
 })
 </script>
