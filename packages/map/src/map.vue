@@ -1,5 +1,5 @@
 <template>
-  <div class="bd-amap-container" :style="{...WHstyleProps}">
+  <div class="bd-amap-container" :style="{...containerStyle}">
     <div class="bd-amap" :style="{...contentStyle}">
     </div>
     <slot></slot>
@@ -78,7 +78,7 @@ export default defineComponent({
 
     const createInstance = () => {
       if (!map.value) {
-        console.log('map: ', map)
+        // console.log('map: ', map)
         // const options =
       }
     }
